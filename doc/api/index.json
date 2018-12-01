@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "name": "Lists",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "returns all lists",
+          "link": "lists/returns_all_lists.json",
+          "groups": "all",
+          "route": "/lists",
+          "method": "get"
+        }
+      ]
+    }
+  ]
+}
