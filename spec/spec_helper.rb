@@ -19,6 +19,7 @@ require 'rspec_api_documentation'
 RspecApiDocumentation.configure do |config|
   config.format = [:json, :combined_text, :html, :api_blueprint]
   config.api_name = "WTTJ-test API documentation"
+  config.request_body_formatter = :json
   config.request_headers_to_include = ['Content-Type', 'Accept', 'X-User-Token', 'X-User-Email']
   config.response_headers_to_include = ['Content-Type', 'Accept', 'X-User-Token', 'X-User-Email']
   config.keep_source_order = true
