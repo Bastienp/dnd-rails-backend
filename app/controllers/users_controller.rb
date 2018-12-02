@@ -4,18 +4,19 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    render json: @user, status: :ok
+    user = User.find(params[:id])
+    render json: user, status: :ok
   rescue ActiveRecord::RecordNotFound => e
     render json: :empty, status: :not_found
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      render json: @user, status: :ok
+    user = User.find(params[:id])
+    if user.update(user_params)
+      ActionCable.server.broadcast('boards_channel', users: User.all)
+      render json: user, status: :ok
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: user.errors, status: :unprocessable_entity
     end
   end
 
