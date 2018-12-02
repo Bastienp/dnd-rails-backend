@@ -16,4 +16,13 @@ RSpec.describe User, type: :model do
   it "is invalid without job" do
     expect(build_stubbed(:user, job: nil)).to_not be_valid
   end
+
+  it "is invalid without position" do
+    expect(build_stubbed(:user, position: nil)).to_not be_valid
+  end
+
+  it "is invalid if position already exists" do
+    create(:user, position: 1)
+    expect(build_stubbed(:user, position: 1)).to_not be_valid
+  end
 end
