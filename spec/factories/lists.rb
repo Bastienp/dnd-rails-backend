@@ -6,11 +6,11 @@ FactoryGirl.define do
 
   factory :to_meet, class: List do
     title "to_meet"
-    step "test_title"
+    step "to_meet"
   end
 
   factory :interview, class: List do
     title "interview"
-    step "test_title"
+    step "interview"
   end
 end
