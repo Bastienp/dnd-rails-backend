@@ -4,7 +4,9 @@ class UsersPositionsController < ApplicationController
       user = User.find(user_to_update['id'])
       user.update(position: index)
     end
-    render json: User.ordered_by_position, status: :ok
+    ordered_users = User.ordered_by_position
+    ActionCable.server.broadcast('boards_channel', users: ordered_users)
+    render json: ordered_users, status: :ok
   end
 
   private
