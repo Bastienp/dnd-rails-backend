@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def index
-    render json: User.all, status: :ok
+    render json: User.ordered_by_position, status: :ok
   end
 
   def show

@@ -21,8 +21,13 @@ RSpec.describe User, type: :model do
     expect(build_stubbed(:user, position: nil)).to_not be_valid
   end
 
-  it "is invalid if position already exists" do
-    create(:user, position: 1)
-    expect(build_stubbed(:user, position: 1)).to_not be_valid
+  context :ordered_by_position do
+    it "gets products without specific product" do
+      to_meet = create(:to_meet)
+      @alan = create(:alan, position: 1)
+      @steve = create(:steve, list:to_meet, position: 2)
+      expect(User.ordered_by_position).to eq([@alan, @steve])
+    end
   end
+
 end

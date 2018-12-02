@@ -17,12 +17,12 @@ RSpec.describe UsersPositionsController, type: :controller do
           @steve = create(:steve, list:to_meet, position: 2)
         end
         context 'with valid parameters' do
-          let(:users) {[@alan, @steve]}
+          let(:users) {[@steve, @alan]}
           it "returns user re-ordered" do
-            @steve.position = 1
-            @steve.save
-            @alan.position = 2
-            @alan.save
+            # @steve.position = 1
+            # @steve.save
+            # @alan.position = 2
+            # @alan.save
             do_request(users: users)
             expect(response_body).to eq([@steve, @alan].to_json)
 

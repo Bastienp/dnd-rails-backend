@@ -1,10 +1,10 @@
 class UsersPositionsController < ApplicationController
   def update
-    params[:users].each do |user_to_update|
+    params[:users].each_with_index do |user_to_update, index|
       user = User.find(user_to_update['id'])
-      user.update(position: user_to_update['position'])
+      user.update(position: index)
     end
-    render json: User.all.order(:position), status: :ok
+    render json: User.ordered_by_position, status: :ok
   end
 
   private

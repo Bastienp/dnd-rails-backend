@@ -10,8 +10,9 @@ RSpec.describe UsersController, type: :controller do
       get "GET Users" do
         context 'with valid params' do
           it 'returns all users' do
+            to_meet = create(:to_meet)
             alan = create(:user,)
-            steve = create(:user, firstname: 'steeve')
+            steve = create(:user, firstname: 'steeve', list: to_meet)
             do_request()
             expect(response_body).to eq([alan, steve].to_json)
             expect(status).to eq(200)
