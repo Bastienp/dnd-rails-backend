@@ -1,9 +1,6 @@
 class UsersPositionsController < ApplicationController
   def update
-    params[:users].each_with_index do |user_to_update, index|
-      user = User.find(user_to_update['id'])
-      user.update(position: index)
-    end
+    User.change_users_order(params[:users])
     ordered_users = User.ordered_by_position
     ActionCable.server.broadcast('boards_channel', users: ordered_users)
     render json: ordered_users, status: :ok
