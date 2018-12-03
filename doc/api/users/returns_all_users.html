@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lists API</title>
+    <title>Users API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,11 +106,11 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Lists API</h1>
+      <h1>Users API</h1>
 
       <div class="article">
-        <h2>returns all lists</h2>
-        <h3>GET /lists</h3>
+        <h2>returns all users</h2>
+        <h3>GET /users</h3>
 
 
 
@@ -121,7 +121,7 @@ table th, table td {
 Content-Type: application/json</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /lists</pre>
+          <pre class="request route highlight">GET /users</pre>
 
 
 
@@ -134,18 +134,24 @@ Content-Type: application/json</pre>
               <h4>Body</h4>
               <pre class="response body">[
   {
-    &quot;id&quot;: 380,
-    &quot;title&quot;: &quot;to_meet&quot;,
-    &quot;created_at&quot;: &quot;2018-12-03T18:51:19.475Z&quot;,
-    &quot;updated_at&quot;: &quot;2018-12-03T18:51:19.475Z&quot;,
-    &quot;step&quot;: &quot;to_meet&quot;
+    &quot;id&quot;: 284,
+    &quot;firstname&quot;: &quot;Alan&quot;,
+    &quot;lastname&quot;: &quot;Turing&quot;,
+    &quot;job&quot;: &quot;Boss of bosses&quot;,
+    &quot;list_id&quot;: 385,
+    &quot;created_at&quot;: &quot;2018-12-03T18:51:19.542Z&quot;,
+    &quot;updated_at&quot;: &quot;2018-12-03T18:51:19.542Z&quot;,
+    &quot;position&quot;: 1
   },
   {
-    &quot;id&quot;: 381,
-    &quot;title&quot;: &quot;interview&quot;,
-    &quot;created_at&quot;: &quot;2018-12-03T18:51:19.478Z&quot;,
-    &quot;updated_at&quot;: &quot;2018-12-03T18:51:19.478Z&quot;,
-    &quot;step&quot;: &quot;interview&quot;
+    &quot;id&quot;: 285,
+    &quot;firstname&quot;: &quot;steeve&quot;,
+    &quot;lastname&quot;: &quot;Turing&quot;,
+    &quot;job&quot;: &quot;Boss of bosses&quot;,
+    &quot;list_id&quot;: 384,
+    &quot;created_at&quot;: &quot;2018-12-03T18:51:19.544Z&quot;,
+    &quot;updated_at&quot;: &quot;2018-12-03T18:51:19.544Z&quot;,
+    &quot;position&quot;: 1
   }
 ]</pre>
       </div>

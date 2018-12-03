@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     if user.update(user_params)
-      User.change_users_order(params[:user][:list_users])
+      User.change_users_order(params[:user][:list_users]) if params[:user][:list_users]
       ActionCable.server.broadcast('boards_channel', users: User.ordered_by_position)
       render json: user, status: :ok
     else

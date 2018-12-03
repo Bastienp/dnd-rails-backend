@@ -12,15 +12,61 @@ Response:
 
   [
     {
-      "id": 72,
-      "title": "test_title",
-      "created_at": "2018-12-01T13:17:25.089Z",
-      "updated_at": "2018-12-01T13:17:25.089Z"
+      "id": 380,
+      "title": "to_meet",
+      "created_at": "2018-12-03T18:51:19.475Z",
+      "updated_at": "2018-12-03T18:51:19.475Z",
+      "step": "to_meet"
     },
     {
-      "id": 73,
-      "title": "test_title",
-      "created_at": "2018-12-01T13:17:25.094Z",
-      "updated_at": "2018-12-01T13:17:25.094Z"
+      "id": 381,
+      "title": "interview",
+      "created_at": "2018-12-03T18:51:19.478Z",
+      "updated_at": "2018-12-03T18:51:19.478Z",
+      "step": "interview"
     }
   ]
+
+
+returns list
+------------
+
+Parameters:
+  * list_id - ID of list
+
+Request:
+  GET /lists/382
+  Accept: application/json
+  Content-Type: application/json
+
+Response:
+  Status: 200 OK
+  Content-Type: application/json; charset=utf-8
+
+  {
+    "id": 382,
+    "title": "test_title",
+    "created_at": "2018-12-03T18:51:19.503Z",
+    "updated_at": "2018-12-03T18:51:19.503Z",
+    "step": "test_title"
+  }
+
+
+returns an error
+----------------
+
+Parameters:
+  * list_id - ID of list
+
+Request:
+  GET /lists/384
+  Accept: application/json
+  Content-Type: application/json
+
+Response:
+  Status: 404 Not Found
+  Content-Type: application/json; charset=utf-8
+
+  "empty"
+
+

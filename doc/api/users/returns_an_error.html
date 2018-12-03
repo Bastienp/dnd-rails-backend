@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lists API</title>
+    <title>Users API</title>
     <meta charset="utf-8">
     <style>
       
@@ -106,12 +106,55 @@ table th, table td {
   </head>
   <body>
     <div class="container">
-      <h1>Lists API</h1>
+      <h1>Users API</h1>
 
       <div class="article">
-        <h2>returns all lists</h2>
-        <h3>GET /lists</h3>
+        <h2>returns an error</h2>
+        <h3>PUT /users/:user_id</h3>
 
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">user_id</span>
+                </td>
+                <td>
+                  <span class="description">ID of user</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">user[firstname]</span>
+                </td>
+                <td>
+                  <span class="description">Firstname of the user</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">user[lastname]</span>
+                </td>
+                <td>
+                  <span class="description">Lastname of the user</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                    <span class="name">user[list_id]</span>
+                </td>
+                <td>
+                  <span class="description">id of list (to_meet, interview etc.)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
 
           <h3>Request</h3>
@@ -121,33 +164,24 @@ table th, table td {
 Content-Type: application/json</pre>
 
           <h4>Route</h4>
-          <pre class="request route highlight">GET /lists</pre>
+          <pre class="request route highlight">PUT /users/289</pre>
 
 
+            <h4>Body</h4>
+            <pre class="request body">{"user":{"firstname":null}}</pre>
 
 
             <h3>Response</h3>
               <h4>Headers</h4>
               <pre class="response headers">Content-Type: application/json; charset=utf-8</pre>
             <h4>Status</h4>
-            <pre class="response status">200 OK</pre>
+            <pre class="response status">422 Unprocessable Entity</pre>
               <h4>Body</h4>
-              <pre class="response body">[
-  {
-    &quot;id&quot;: 380,
-    &quot;title&quot;: &quot;to_meet&quot;,
-    &quot;created_at&quot;: &quot;2018-12-03T18:51:19.475Z&quot;,
-    &quot;updated_at&quot;: &quot;2018-12-03T18:51:19.475Z&quot;,
-    &quot;step&quot;: &quot;to_meet&quot;
-  },
-  {
-    &quot;id&quot;: 381,
-    &quot;title&quot;: &quot;interview&quot;,
-    &quot;created_at&quot;: &quot;2018-12-03T18:51:19.478Z&quot;,
-    &quot;updated_at&quot;: &quot;2018-12-03T18:51:19.478Z&quot;,
-    &quot;step&quot;: &quot;interview&quot;
-  }
-]</pre>
+              <pre class="response body">{
+  &quot;firstname&quot;: [
+    &quot;can&#39;t be blank&quot;
+  ]
+}</pre>
       </div>
     </div>
   </body>

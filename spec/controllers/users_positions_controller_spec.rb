@@ -24,7 +24,7 @@ RSpec.describe UsersPositionsController, type: :controller do
             # @alan.position = 2
             # @alan.save
             do_request(users: users)
-            expect(response_body).to eq([@steve, @alan].to_json)
+            expect(JSON.parse(response_body).first['firstname']).to eq(@steve.firstname)
 
 
             expect(status).to eq(200)

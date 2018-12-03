@@ -1,0 +1,40 @@
+{
+  "resource": "Users Positions",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/users_positions",
+  "description": "returns user re-ordered",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "users",
+      "description": "users to reorder"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/users_positions",
+      "request_body": "{\"users\":[{\"id\":291,\"firstname\":\"Steve\",\"lastname\":\"Jobs\",\"job\":\"Vendeur de pommes\",\"list_id\":392,\"created_at\":\"2018-12-03T18:51:19.643Z\",\"updated_at\":\"2018-12-03T18:51:19.643Z\",\"position\":2},{\"id\":290,\"firstname\":\"Alan\",\"lastname\":\"Turing\",\"job\":\"Boss of bosses\",\"list_id\":393,\"created_at\":\"2018-12-03T18:51:19.641Z\",\"updated_at\":\"2018-12-03T18:51:19.641Z\",\"position\":1}]}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 291,\n    \"firstname\": \"Steve\",\n    \"lastname\": \"Jobs\",\n    \"job\": \"Vendeur de pommes\",\n    \"list_id\": 392,\n    \"created_at\": \"2018-12-03T18:51:19.643Z\",\n    \"updated_at\": \"2018-12-03T18:51:19.659Z\",\n    \"position\": 0\n  },\n  {\n    \"id\": 290,\n    \"firstname\": \"Alan\",\n    \"lastname\": \"Turing\",\n    \"job\": \"Boss of bosses\",\n    \"list_id\": 393,\n    \"created_at\": \"2018-12-03T18:51:19.641Z\",\n    \"updated_at\": \"2018-12-03T18:51:19.641Z\",\n    \"position\": 1\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

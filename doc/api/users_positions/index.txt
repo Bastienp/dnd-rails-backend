@@ -1,0 +1,39 @@
+returns user re-ordered
+-----------------------
+
+Parameters:
+  * users - users to reorder
+
+Request:
+  PUT /users_positions
+  Accept: application/json
+  Content-Type: application/json
+
+  {"users":[{"id":291,"firstname":"Steve","lastname":"Jobs","job":"Vendeur de pommes","list_id":392,"created_at":"2018-12-03T18:51:19.643Z","updated_at":"2018-12-03T18:51:19.643Z","position":2},{"id":290,"firstname":"Alan","lastname":"Turing","job":"Boss of bosses","list_id":393,"created_at":"2018-12-03T18:51:19.641Z","updated_at":"2018-12-03T18:51:19.641Z","position":1}]}
+
+Response:
+  Status: 200 OK
+  Content-Type: application/json; charset=utf-8
+
+  [
+    {
+      "id": 291,
+      "firstname": "Steve",
+      "lastname": "Jobs",
+      "job": "Vendeur de pommes",
+      "list_id": 392,
+      "created_at": "2018-12-03T18:51:19.643Z",
+      "updated_at": "2018-12-03T18:51:19.659Z",
+      "position": 0
+    },
+    {
+      "id": 290,
+      "firstname": "Alan",
+      "lastname": "Turing",
+      "job": "Boss of bosses",
+      "list_id": 393,
+      "created_at": "2018-12-03T18:51:19.641Z",
+      "updated_at": "2018-12-03T18:51:19.641Z",
+      "position": 1
+    }
+  ]

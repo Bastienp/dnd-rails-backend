@@ -2,11 +2,15 @@
   "resource": "Lists",
   "resource_explanation": null,
   "http_method": "GET",
-  "route": "/lists",
-  "description": "returns all lists",
+  "route": "/lists/:list_id",
+  "description": "returns an error",
   "explanation": null,
   "parameters": [
-
+    {
+      "required": true,
+      "name": "list_id",
+      "description": "ID of list"
+    }
   ],
   "response_fields": [
 
@@ -14,7 +18,7 @@
   "requests": [
     {
       "request_method": "GET",
-      "request_path": "/lists",
+      "request_path": "/lists/384",
       "request_body": null,
       "request_headers": {
         "Accept": "application/json",
@@ -23,9 +27,9 @@
       "request_query_parameters": {
       },
       "request_content_type": "application/json",
-      "response_status": 200,
-      "response_status_text": "OK",
-      "response_body": "[\n  {\n    \"id\": 380,\n    \"title\": \"to_meet\",\n    \"created_at\": \"2018-12-03T18:51:19.475Z\",\n    \"updated_at\": \"2018-12-03T18:51:19.475Z\",\n    \"step\": \"to_meet\"\n  },\n  {\n    \"id\": 381,\n    \"title\": \"interview\",\n    \"created_at\": \"2018-12-03T18:51:19.478Z\",\n    \"updated_at\": \"2018-12-03T18:51:19.478Z\",\n    \"step\": \"interview\"\n  }\n]",
+      "response_status": 404,
+      "response_status_text": "Not Found",
+      "response_body": "\"empty\"",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

@@ -23,15 +23,297 @@ FORMAT: 1A
 
             [
               {
-                "id": 72,
-                "title": "test_title",
-                "created_at": "2018-12-01T13:17:25.089Z",
-                "updated_at": "2018-12-01T13:17:25.089Z"
+                "id": 380,
+                "title": "to_meet",
+                "created_at": "2018-12-03T18:51:19.475Z",
+                "updated_at": "2018-12-03T18:51:19.475Z",
+                "step": "to_meet"
               },
               {
-                "id": 73,
-                "title": "test_title",
-                "created_at": "2018-12-01T13:17:25.094Z",
-                "updated_at": "2018-12-01T13:17:25.094Z"
+                "id": 381,
+                "title": "interview",
+                "created_at": "2018-12-03T18:51:19.478Z",
+                "updated_at": "2018-12-03T18:51:19.478Z",
+                "step": "interview"
+              }
+            ]
+
+## Get list [/lists/{list_id}]
+
++ Parameters
+  + list_id (required) - ID of list
+
+### GET List [GET]
+
++ Request returns list (application/json)
+
+    + Headers
+
+            Accept: application/json
+
++ Response 200 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            {
+              "id": 382,
+              "title": "test_title",
+              "created_at": "2018-12-03T18:51:19.503Z",
+              "updated_at": "2018-12-03T18:51:19.503Z",
+              "step": "test_title"
+            }
+
++ Request returns an error (application/json)
+
+    + Headers
+
+            Accept: application/json
+
++ Response 404 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            "empty"
+
+# Group Users
+
+## Get Users [/users]
+
+### GET Users [GET]
+
++ Request returns all users (application/json)
+
+    + Headers
+
+            Accept: application/json
+
++ Response 200 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            [
+              {
+                "id": 284,
+                "firstname": "Alan",
+                "lastname": "Turing",
+                "job": "Boss of bosses",
+                "list_id": 385,
+                "created_at": "2018-12-03T18:51:19.542Z",
+                "updated_at": "2018-12-03T18:51:19.542Z",
+                "position": 1
+              },
+              {
+                "id": 285,
+                "firstname": "steeve",
+                "lastname": "Turing",
+                "job": "Boss of bosses",
+                "list_id": 384,
+                "created_at": "2018-12-03T18:51:19.544Z",
+                "updated_at": "2018-12-03T18:51:19.544Z",
+                "position": 1
+              }
+            ]
+
+## Get user [/users/{user_id}]
+
++ Parameters
+  + user_id (required) - ID of user
+
+### GET User [GET]
+
++ Request returns user (application/json)
+
+    + Headers
+
+            Accept: application/json
+
++ Response 200 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            {
+              "id": 286,
+              "firstname": "Alan",
+              "lastname": "Turing",
+              "job": "Boss of bosses",
+              "list_id": 386,
+              "created_at": "2018-12-03T18:51:19.562Z",
+              "updated_at": "2018-12-03T18:51:19.562Z",
+              "position": 1
+            }
+
++ Request returns an error (application/json)
+
+    + Headers
+
+            Accept: application/json
+
++ Response 404 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            "empty"
+
+## Put user [/users/{user_id}]
+
++ Parameters
+  + user_id (required) - ID of user
+  + firstname (optional) - Firstname of the user
+  + lastname (optional) - Lastname of the user
+  + list_id (optional) - id of list (to_meet, interview etc.)
+
+### UPDATE User [PUT]
+
++ Request returns user (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+              "user": {
+                "list_id": 389
+              }
+            }
+
++ Response 200 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            {
+              "id": 288,
+              "list_id": 389,
+              "firstname": "Alan",
+              "lastname": "Turing",
+              "job": "Boss of bosses",
+              "position": 1,
+              "created_at": "2018-12-03T18:51:19.598Z",
+              "updated_at": "2018-12-03T18:51:19.607Z"
+            }
+
++ Request returns an error (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+              "user": {
+                "firstname": null
+              }
+            }
+
++ Response 422 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            {
+              "firstname": [
+                "can't be blank"
+              ]
+            }
+
+# Group Users Positions
+
+## Put users positions [/users_positions]
+
++ Parameters
+  + users (required) - users to reorder
+
+### UPDATE Users positions [PUT]
+
++ Request returns user re-ordered (application/json)
+
+    + Headers
+
+            Accept: application/json
+
+    + Body
+
+            {
+              "users": [
+                {
+                  "id": 291,
+                  "firstname": "Steve",
+                  "lastname": "Jobs",
+                  "job": "Vendeur de pommes",
+                  "list_id": 392,
+                  "created_at": "2018-12-03T18:51:19.643Z",
+                  "updated_at": "2018-12-03T18:51:19.643Z",
+                  "position": 2
+                },
+                {
+                  "id": 290,
+                  "firstname": "Alan",
+                  "lastname": "Turing",
+                  "job": "Boss of bosses",
+                  "list_id": 393,
+                  "created_at": "2018-12-03T18:51:19.641Z",
+                  "updated_at": "2018-12-03T18:51:19.641Z",
+                  "position": 1
+                }
+              ]
+            }
+
++ Response 200 (application/json)
+
+    + Headers
+
+            
+
+    + Body
+
+            [
+              {
+                "id": 291,
+                "firstname": "Steve",
+                "lastname": "Jobs",
+                "job": "Vendeur de pommes",
+                "list_id": 392,
+                "created_at": "2018-12-03T18:51:19.643Z",
+                "updated_at": "2018-12-03T18:51:19.659Z",
+                "position": 0
+              },
+              {
+                "id": 290,
+                "firstname": "Alan",
+                "lastname": "Turing",
+                "job": "Boss of bosses",
+                "list_id": 393,
+                "created_at": "2018-12-03T18:51:19.641Z",
+                "updated_at": "2018-12-03T18:51:19.641Z",
+                "position": 1
               }
             ]

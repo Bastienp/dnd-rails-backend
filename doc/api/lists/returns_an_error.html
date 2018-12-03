@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>WTTJ-test API documentation</title>
-  <meta charset="utf-8">
-  <style>
-    
+  <head>
+    <title>Lists API</title>
+    <meta charset="utf-8">
+    <style>
+      
 body {
   font-family: Helvetica,Arial,sans-serif;
   font-size: 13px;
@@ -39,7 +39,7 @@ pre {
 
 td.required .name:after {
   float: right;
-  content: &quot;required&quot;;
+  content: "required";
   font-weight: normal;
   color: #F08080;
 }
@@ -102,57 +102,57 @@ table th, table td {
   text-align: left;
 }
 
-  </style>
-</head>
-<body>
-<div class="container">
-  <h1>WTTJ-test API documentation</h1>
-  
-  <div class="article">
-    <h2>Lists</h2>
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Lists API</h1>
 
-    <ul>
-      <li>
-        <a href="lists/returns_all_lists.html">returns all lists</a>
-      </li>
-      <li>
-        <a href="lists/returns_list.html">returns list</a>
-      </li>
-      <li>
-        <a href="lists/returns_an_error.html">returns an error</a>
-      </li>
-    </ul>
-  </div>
-  <div class="article">
-    <h2>Users</h2>
+      <div class="article">
+        <h2>returns an error</h2>
+        <h3>GET /lists/:list_id</h3>
 
-    <ul>
-      <li>
-        <a href="users/returns_all_users.html">returns all users</a>
-      </li>
-      <li>
-        <a href="users/returns_user.html">returns user</a>
-      </li>
-      <li>
-        <a href="users/returns_an_error.html">returns an error</a>
-      </li>
-      <li>
-        <a href="users/returns_user.html">returns user</a>
-      </li>
-      <li>
-        <a href="users/returns_an_error.html">returns an error</a>
-      </li>
-    </ul>
-  </div>
-  <div class="article">
-    <h2>Users Positions</h2>
+          <h3>Parameters</h3>
+          <table class="parameters table table-striped table-bordered table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="required">
+                    <span class="name">list_id</span>
+                </td>
+                <td>
+                  <span class="description">ID of list</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
 
-    <ul>
-      <li>
-        <a href="users_positions/returns_user_re-ordered.html">returns user re-ordered</a>
-      </li>
-    </ul>
-  </div>
-</div>
-</body>
+
+          <h3>Request</h3>
+
+            <h4>Headers</h4>
+            <pre class="request headers">Accept: application/json
+Content-Type: application/json</pre>
+
+          <h4>Route</h4>
+          <pre class="request route highlight">GET /lists/384</pre>
+
+
+
+
+            <h3>Response</h3>
+              <h4>Headers</h4>
+              <pre class="response headers">Content-Type: application/json; charset=utf-8</pre>
+            <h4>Status</h4>
+            <pre class="response status">404 Not Found</pre>
+              <h4>Body</h4>
+              <pre class="response body">&quot;empty&quot;</pre>
+      </div>
+    </div>
+  </body>
 </html>

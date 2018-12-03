@@ -1,0 +1,55 @@
+{
+  "resource": "Users",
+  "resource_explanation": null,
+  "http_method": "PUT",
+  "route": "/users/:user_id",
+  "description": "returns an error",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "name": "user_id",
+      "description": "ID of user"
+    },
+    {
+      "scope": "user",
+      "name": "firstname",
+      "description": "Firstname of the user"
+    },
+    {
+      "scope": "user",
+      "name": "lastname",
+      "description": "Lastname of the user"
+    },
+    {
+      "scope": "user",
+      "name": "list_id",
+      "description": "id of list (to_meet, interview etc.)"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/users/289",
+      "request_body": "{\"user\":{\"firstname\":null}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 422,
+      "response_status_text": "Unprocessable Entity",
+      "response_body": "{\n  \"firstname\": [\n    \"can't be blank\"\n  ]\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

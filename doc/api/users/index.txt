@@ -1,0 +1,140 @@
+returns all users
+-----------------
+
+Request:
+  GET /users
+  Accept: application/json
+  Content-Type: application/json
+
+Response:
+  Status: 200 OK
+  Content-Type: application/json; charset=utf-8
+
+  [
+    {
+      "id": 284,
+      "firstname": "Alan",
+      "lastname": "Turing",
+      "job": "Boss of bosses",
+      "list_id": 385,
+      "created_at": "2018-12-03T18:51:19.542Z",
+      "updated_at": "2018-12-03T18:51:19.542Z",
+      "position": 1
+    },
+    {
+      "id": 285,
+      "firstname": "steeve",
+      "lastname": "Turing",
+      "job": "Boss of bosses",
+      "list_id": 384,
+      "created_at": "2018-12-03T18:51:19.544Z",
+      "updated_at": "2018-12-03T18:51:19.544Z",
+      "position": 1
+    }
+  ]
+
+
+returns user
+------------
+
+Parameters:
+  * user_id - ID of user
+
+Request:
+  GET /users/286
+  Accept: application/json
+  Content-Type: application/json
+
+Response:
+  Status: 200 OK
+  Content-Type: application/json; charset=utf-8
+
+  {
+    "id": 286,
+    "firstname": "Alan",
+    "lastname": "Turing",
+    "job": "Boss of bosses",
+    "list_id": 386,
+    "created_at": "2018-12-03T18:51:19.562Z",
+    "updated_at": "2018-12-03T18:51:19.562Z",
+    "position": 1
+  }
+
+
+returns an error
+----------------
+
+Parameters:
+  * user_id - ID of user
+
+Request:
+  GET /users/288
+  Accept: application/json
+  Content-Type: application/json
+
+Response:
+  Status: 404 Not Found
+  Content-Type: application/json; charset=utf-8
+
+  "empty"
+
+
+returns user
+------------
+
+Parameters:
+  * user_id - ID of user
+  * firstname - Firstname of the user
+  * lastname - Lastname of the user
+  * list_id - id of list (to_meet, interview etc.)
+
+Request:
+  PUT /users/288
+  Accept: application/json
+  Content-Type: application/json
+
+  {"user":{"list_id":389}}
+
+Response:
+  Status: 200 OK
+  Content-Type: application/json; charset=utf-8
+
+  {
+    "id": 288,
+    "list_id": 389,
+    "firstname": "Alan",
+    "lastname": "Turing",
+    "job": "Boss of bosses",
+    "position": 1,
+    "created_at": "2018-12-03T18:51:19.598Z",
+    "updated_at": "2018-12-03T18:51:19.607Z"
+  }
+
+
+returns an error
+----------------
+
+Parameters:
+  * user_id - ID of user
+  * firstname - Firstname of the user
+  * lastname - Lastname of the user
+  * list_id - id of list (to_meet, interview etc.)
+
+Request:
+  PUT /users/289
+  Accept: application/json
+  Content-Type: application/json
+
+  {"user":{"firstname":null}}
+
+Response:
+  Status: 422 Unprocessable Entity
+  Content-Type: application/json; charset=utf-8
+
+  {
+    "firstname": [
+      "can't be blank"
+    ]
+  }
+
+

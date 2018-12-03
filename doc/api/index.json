@@ -10,6 +10,74 @@
           "groups": "all",
           "route": "/lists",
           "method": "get"
+        },
+        {
+          "description": "returns list",
+          "link": "lists/returns_list.json",
+          "groups": "all",
+          "route": "/lists/:list_id",
+          "method": "get"
+        },
+        {
+          "description": "returns an error",
+          "link": "lists/returns_an_error.json",
+          "groups": "all",
+          "route": "/lists/:list_id",
+          "method": "get"
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "returns all users",
+          "link": "users/returns_all_users.json",
+          "groups": "all",
+          "route": "/users",
+          "method": "get"
+        },
+        {
+          "description": "returns user",
+          "link": "users/returns_user.json",
+          "groups": "all",
+          "route": "/users/:user_id",
+          "method": "get"
+        },
+        {
+          "description": "returns an error",
+          "link": "users/returns_an_error.json",
+          "groups": "all",
+          "route": "/users/:user_id",
+          "method": "get"
+        },
+        {
+          "description": "returns user",
+          "link": "users/returns_user.json",
+          "groups": "all",
+          "route": "/users/:user_id",
+          "method": "put"
+        },
+        {
+          "description": "returns an error",
+          "link": "users/returns_an_error.json",
+          "groups": "all",
+          "route": "/users/:user_id",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "Users Positions",
+      "explanation": null,
+      "examples": [
+        {
+          "description": "returns user re-ordered",
+          "link": "users_positions/returns_user_re-ordered.json",
+          "groups": "all",
+          "route": "/users_positions",
+          "method": "put"
         }
       ]
     }
